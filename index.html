@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ege Mavisi Deniz Restoranı - En taze deniz ürünleri, özel Ege mezeleri ve eşsiz deniz manzarası ile unutulmaz bir lezzet deneyimi.">
+    <title>Ege Mavisi Deniz Restoranı | Premium Deniz Ürünleri</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar-header" id="navbar">
+        <div class="container navbar-container">
+            <a href="#home" class="logo">
+                <i class="fa-solid fa-anchor logo-icon"></i>
+                <span class="logo-text">EGE MAVİSİ</span>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Ana Sayfa</a>
+                <a href="#menu" class="nav-link">Menü</a>
+                <a href="#ratings" class="nav-link">Değerlendirmeler</a>
+                <a href="#careers" class="nav-link">İşe Alım</a>
+                <a href="#contact" class="nav-link">İletişim</a>
+                <a href="#booking" class="btn btn-primary nav-btn">Rezervasyon Yap</a>
+            </nav>
+            <button class="hamburger-btn" id="hamburger" aria-label="Menüyü Aç">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <div class="container hero-container">
+            <span class="hero-subtitle fade-in-up">Eşsiz Lezzetler & Harika Manzara</span>
+            <h1 class="hero-title fade-in-up">Ege'nin En Taze Deniz Ürünleri</h1>
+            <p class="hero-description fade-in-up">Denizin kalbinden sofranıza uzanan lezzet yolculuğu. Şeflerimizin özenle hazırladığı taze deniz ürünleri ve geleneksel Ege mezeleriyle buluşun.</p>
+            <div class="hero-actions fade-in-up">
+                <a href="#menu" class="btn btn-primary btn-lg">Menüyü İncele</a>
+                <a href="#booking" class="btn btn-secondary btn-lg">Masa Rezerve Et</a>
+            </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="scroll-down-indicator">
+            <a href="#menu" aria-label="Aşağı Kaydır">
+                <i class="fa-solid fa-chevron-down bounce"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="highlights-section">
+        <div class="container grids-3">
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <i class="fa-solid fa-fish"></i>
+                </div>
+                <h3>Günlük Taze Av</h3>
+                <p>Her sabah balıkçılarımızdan gelen en taze mevsim balıklarını özenle seçiyor ve sunuyoruz.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <i class="fa-solid fa-kitchen-set"></i>
+                </div>
+                <h3>Ödüllü Şefler</h3>
+                <p>Ege mutfağının geleneksel tariflerini modern dokunuşlarla harmanlayan usta kadromuz.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <i class="fa-solid fa-water"></i>
+                </div>
+                <h3>Denize Sıfır Konum</h3>
+                <p>Dalgaların sesi ve batan güneşin eşsiz renkleri eşliğinde unutulmaz bir akşam yemeği keyfi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Gastronomi Deneyimi</span>
+                <h2 class="section-title">Aşkla Hazırlanan Menümüz</h2>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Search & Filter Controls -->
+            <div class="menu-controls">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="menuSearch" placeholder="Menüde lezzet ara (örn: Levrek, Kalamar...)" aria-label="Menü Ara">
+                </div>
+                <div class="menu-tabs" id="menuTabs">
+                    <button class="tab-btn active" data-category="all">Tümü</button>
+                    <button class="tab-btn" data-category="starters">Mezeler & Başlangıçlar</button>
+                    <button class="tab-btn" data-category="mains">Ana Yemekler</button>
+                    <button class="tab-btn" data-category="salads">Salatalar</button>
+                    <button class="tab-btn" data-category="desserts">Tatlılar</button>
+                    <button class="tab-btn" data-category="drinks">İçecekler</button>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Will be dynamically generated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews & Rating Section -->
+    <section id="ratings" class="ratings-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Misafir Deneyimleri</span>
+                <h2 class="section-title">Sizden Gelen Değerlendirmeler</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="ratings-layout">
+                <!-- Left: Rating Stats & Submission Form -->
+                <div class="rating-sidebar">
+                    <div class="rating-summary-card">
+                        <h3>Genel Puanlama</h3>
+                        <div class="big-rating-number" id="avgRating">4.8</div>
+                        <div class="rating-stars" id="avgStars">
+                            <!-- Star icons -->
+                        </div>
+                        <p class="total-reviews-count" id="totalReviewsCount">Toplam 148 değerlendirme</p>
+                    </div>
+
+                    <!-- Review Form -->
+                    <div class="review-form-card">
+                        <h3>Deneyiminizi Puanlayın</h3>
+                        <form id="reviewForm" novalidate>
+                            <div class="form-group">
+                                <label for="reviewerName">Adınız Soyadınız</label>
+                                <input type="text" id="reviewerName" required placeholder="Örn: Sude Yılmaz">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Puanınız</label>
+                                <div class="star-rating-input" id="starRatingInput">
+                                    <i class="fa-star fa-regular star-btn" data-value="1" role="button" aria-label="1 Yıldız"></i>
+                                    <i class="fa-star fa-regular star-btn" data-value="2" role="button" aria-label="2 Yıldız"></i>
+                                    <i class="fa-star fa-regular star-btn" data-value="3" role="button" aria-label="3 Yıldız"></i>
+                                    <i class="fa-star fa-regular star-btn" data-value="4" role="button" aria-label="4 Yıldız"></i>
+                                    <i class="fa-star fa-regular star-btn" data-value="5" role="button" aria-label="5 Yıldız"></i>
+                                </div>
+                                <span class="rating-error-msg" id="ratingError">Lütfen bir puan seçiniz.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reviewerComment">Yorumunuz</label>
+                                <textarea id="reviewerComment" rows="4" required placeholder="Deneyiminizi kısaca yazın (servis, lezzet, manzara...)"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">Değerlendir ve Gönder</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right: Reviews List -->
+                <div class="reviews-list-container">
+                    <h3>Son Değerlendirmeler</h3>
+                    <div class="reviews-list" id="reviewsList">
+                        <!-- Will be dynamically populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers / Recruitment Section -->
+    <section id="careers" class="careers-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Ekibimize Katılın</span>
+                <h2 class="section-title">Aramıza Katılmak İster misiniz?</h2>
+                <div class="divider"></div>
+                <p class="section-desc">Ege Mavisi ailesi olarak, gastronomiye tutkuyla bağlı, güler yüzlü ve dinamik takım arkadaşları arıyoruz. Açık pozisyonlarımızı inceleyerek başvurunuzu yapabilirsiniz.</p>
+            </div>
+
+            <div class="careers-layout">
+                <!-- Open Positions -->
+                <div class="positions-list">
+                    <h3>Açık Pozisyonlar</h3>
+                    
+                    <div class="position-card">
+                        <div class="position-header">
+                            <h4>Mutfak / Sous Chef</h4>
+                            <span class="job-tag">Tam Zamanlı</span>
+                        </div>
+                        <p class="position-desc">Deniz ürünleri ve Ege mutfağı konusunda en az 3 yıl deneyimli, yaratıcı ve ekip yönetimine hakim sous chef.</p>
+                        <ul class="position-requirements">
+                            <li>Hijyen standartlarına (HACCP) hakim</li>
+                            <li>Yoğun tempoda çalışabilecek</li>
+                        </ul>
+                    </div>
+
+                    <div class="position-card">
+                        <div class="position-header">
+                            <h4>Salon / Servis Elemanı (Garson)</h4>
+                            <span class="job-tag">Tam/Yarı Zamanlı</span>
+                        </div>
+                        <p class="position-desc">Güler yüzlü, iletişim becerileri yüksek ve misafir memnuniyetini ön planda tutan takım arkadaşı.</p>
+                        <ul class="position-requirements">
+                            <li>En az 1 yıl servis deneyimi olan</li>
+                            <li>Diksiyonu düzgün, temel düzeyde İngilizce bilen</li>
+                        </ul>
+                    </div>
+
+                    <div class="position-card">
+                        <div class="position-header">
+                            <h4>Bar / Barmen & Barista</h4>
+                            <span class="job-tag">Tam Zamanlı</span>
+                        </div>
+                        <p class="position-desc">Alkollü/alkolsüz kokteyller ve kahve çeşitlerinde tecrübeli, bar düzenini sağlayacak uzman.</p>
+                        <ul class="position-requirements">
+                            <li>Trend kokteyl reçetelerine hakim</li>
+                            <li>Hızlı ve düzenli çalışma disiplinine sahip</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Career Application Form -->
+                <div class="application-form-container">
+                    <div class="glass-panel career-form-card">
+                        <h3>İş Başvuru Formu</h3>
+                        <form id="careerForm" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="applicantName">Adınız Soyadınız</label>
+                                    <input type="text" id="applicantName" required placeholder="Adınız Soyadınız">
+                                </div>
+                                <div class="form-group">
+                                    <label for="applicantPhone">Telefon Numaranız</label>
+                                    <input type="tel" id="applicantPhone" required placeholder="05xx xxx xx xx">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="applicantEmail">E-posta Adresiniz</label>
+                                    <input type="email" id="applicantEmail" required placeholder="örnek@gmail.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="applicantPosition">Başvurulan Pozisyon</label>
+                                    <select id="applicantPosition" required>
+                                        <option value="" disabled selected>Pozisyon Seçiniz</option>
+                                        <option value="Sous Chef">Sous Chef (Mutfak)</option>
+                                        <option value="Garson">Servis Elemanı (Garson)</option>
+                                        <option value="Barmen">Barmen / Barista</option>
+                                        <option value="Komi">Komi / Yardımcı Eleman</option>
+                                        <option value="Diğer">Diğer</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="applicantExperience">Deneyiminiz ve Ön Yazı</label>
+                                <textarea id="applicantExperience" rows="5" required placeholder="Önceki çalışma yerleriniz, deneyiminiz ve kendinizden kısaca bahseder misiniz?"></textarea>
+                            </div>
+
+                            <div class="form-group file-input-group">
+                                <label>CV / Özgeçmiş (Opsiyonel)</label>
+                                <div class="file-dropzone" id="fileDropzone">
+                                    <i class="fa-solid fa-cloud-arrow-up file-icon"></i>
+                                    <span>CV dosyanızı buraya sürükleyin veya seçin</span>
+                                    <span class="file-limit">PDF, DOCX (Maks. 5MB)</span>
+                                    <input type="file" id="cvFile" accept=".pdf,.doc,.docx" style="display:none">
+                                </div>
+                                <div id="fileUploadName" class="file-upload-name"></div>
+                            </div>
+
+                            <button type="submit" class="btn btn-secondary btn-block">Başvuruyu Tamamla</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation & Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Bize Ulaşın</span>
+                <h2 class="section-title">İletişim & Masa Rezervasyonu</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="contact-layout">
+                <!-- Left: Booking Form -->
+                <div id="booking" class="booking-card-wrapper">
+                    <div class="booking-card">
+                        <h3>Masa Rezervasyonu</h3>
+                        <form id="bookingForm" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="bookName">Adınız Soyadınız</label>
+                                    <input type="text" id="bookName" required placeholder="Adınız Soyadınız">
+                                </div>
+                                <div class="form-group">
+                                    <label for="bookPhone">Telefon Numaranız</label>
+                                    <input type="tel" id="bookPhone" required placeholder="05xx xxx xx xx">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="bookDate">Tarih</label>
+                                    <input type="date" id="bookDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bookTime">Saat</label>
+                                    <select id="bookTime" required>
+                                        <option value="" disabled selected>Saat Seçiniz</option>
+                                        <option value="12:00">12:00</option>
+                                        <option value="13:00">13:00</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="17:00">17:00</option>
+                                        <option value="18:00">18:00</option>
+                                        <option value="19:00">19:00</option>
+                                        <option value="20:00">20:00</option>
+                                        <option value="21:00">21:00</option>
+                                        <option value="22:00">22:00</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bookGuests">Kişi Sayısı</label>
+                                    <select id="bookGuests" required>
+                                        <option value="" disabled selected>Kişi Sayısı</option>
+                                        <option value="1">1 Kişi</option>
+                                        <option value="2">2 Kişi</option>
+                                        <option value="3">3 Kişi</option>
+                                        <option value="4">4 Kişi</option>
+                                        <option value="5">5 Kişi</option>
+                                        <option value="6">6+ Kişi</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bookNote">Özel İstekler (Opsiyonel)</label>
+                                <textarea id="bookNote" rows="2" placeholder="Cam kenarı masa tercihi, alerjen durumları vb."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">Rezervasyonu Onayla</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right: Contact Info & Map -->
+                <div class="contact-info-container">
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <h4>Adres</h4>
+                                <p>Atatürk Caddesi, No: 124, Kordonboyu, İzmir, Türkiye</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <h4>Telefon / Rezervasyon</h4>
+                                <p>+90 (232) 444 88 99</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <h4>E-posta</h4>
+                                <p>info@egemavisiseafood.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div class="contact-item-text">
+                                <h4>Çalışma Saatleri</h4>
+                                <p>Her gün: 12:00 - 23:30 (Mutfak Kapanış: 23:00)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mock Map Visual -->
+                    <div class="map-wrapper">
+                        <div class="map-placeholder">
+                            <div class="map-radar"></div>
+                            <i class="fa-solid fa-location-crosshairs map-pin-icon"></i>
+                            <h4>Ege Mavisi Konumu</h4>
+                            <p>Deniz kenarında, eşsiz körfez manzarasıyla</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <i class="fa-solid fa-anchor logo-icon"></i>
+                    <span class="logo-text">EGE MAVİSİ</span>
+                </a>
+                <p>Ege'nin zengin deniz ürünleri kültürünü ve sıcak misafirperverliğini harmanlayarak sizleri ağırlamaktan mutluluk duyuyoruz.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Tripadvisor"><i class="fa-brands fa-tripadvisor"></i></a>
+                    <a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Hızlı Erişim</h4>
+                <ul>
+                    <li><a href="#home">Ana Sayfa</a></li>
+                    <li><a href="#menu">Menümüz</a></li>
+                    <li><a href="#ratings">Değerlendirmeler</a></li>
+                    <li><a href="#careers">İşe Alım</a></li>
+                    <li><a href="#contact">Rezervasyon</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-gallery">
+                <h4>Galeriden Kareler</h4>
+                <div class="footer-gallery-grid">
+                    <div class="gallery-img-wrapper"><img src="images/dish1.png" alt="Levrek"></div>
+                    <div class="gallery-img-wrapper"><img src="images/dish2.png" alt="Makarna"></div>
+                    <div class="gallery-img-wrapper"><img src="images/dish3.png" alt="Kalamar"></div>
+                    <div class="gallery-img-wrapper"><img src="images/hero.png" alt="Manzara"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 Ege Mavisi Deniz Restoranı. Tüm hakları saklıdır.</p>
+                <p>Tasarım & Geliştirme: Antigravity AI</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Modal (For Form Submissions) -->
+    <div class="modal-overlay" id="notificationModal">
+        <div class="modal-card">
+            <div class="modal-icon-wrapper" id="modalIcon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 id="modalTitle">Başarılı!</h3>
+            <p id="modalMessage">Rezervasyon kaydınız başarıyla alındı. Teşekkür ederiz!</p>
+            <button class="btn btn-primary" id="modalCloseBtn">Kapat</button>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="app.js"></script>
+</body>
+</html>
